@@ -1,0 +1,136 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+body, html {
+  background: #0f1016;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 16, 22, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+h1 {
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  margin: 0 0 5px 0;
+}
+
+.tag {
+  color: #ff3366;
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+#status {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.status-connected { color: #00ffaa; text-shadow: 0 0 8px #00ffaa; }
+.status-disconnected { color: #ff3333; text-shadow: 0 0 8px #ff3333; }
+
+.hint {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 8px;
+}
+.hint code {
+  color: #ccc;
+  background: #222;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.room {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1;
+  padding: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.wall {
+  background: linear-gradient(145deg, #161821, #0c0d12);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  width: 250px;
+  min-height: 600px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5), inset 2px 2px 5px rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wall-header {
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 2px;
+}
+
+.eyes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.btn-eye {
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 50%;
+  border: none;
+  background: #111;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.8), inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.1s;
+}
+
+.btn-eye:active {
+  transform: scale(0.95);
+}
+
+.glow {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+/* 11th button centered */
+.btn-eye:nth-child(11) {
+  grid-column: span 2;
+  width: 50%;
+  margin: 0 auto;
+}
